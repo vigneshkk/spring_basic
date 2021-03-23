@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  Autowire configuration using byType  -->
+	<!-- <bean id="dep" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="byType">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> --> 
+    
+    <!-- Autowire byType ambiguity problem  -->
+   <!-- <bean id="dep" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="dep1" class="com.beanpackage.Department" >
+	<property name="departName" value="admin" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="byType">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> --> 
+    
+    <!-- Autowire byType solving ambiguity problem  -->
+    <!-- <bean id="dep" class="com.beanpackage.Department" autowire-candidate="false" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="dep1" class="com.beanpackage.Department"  >
+	<property name="departName" value="admin" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="byType">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> -->
+    
+    <!-- Autowire byName  -->
+    <!-- <bean id="department" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="dep1" class="com.beanpackage.Department"  >
+	<property name="departName" value="admin" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="byName">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> --> 
+	
+	<!-- Autowire constructor  -->
+	<!-- <bean id="dep" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="constructor">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> -->
+	
+	<!-- Autowire  autodetect -->
+	<!-- <bean id="dep" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo" autowire="autodetect">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean> -->
+	
+	<!--  Autowire using Annotations -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	<bean id="department" class="com.beanpackage.Department" >
+	<property name="departName" value="sales" />
+	</bean>
+	<bean id="em" class="com.beanpackage.Empojo">
+	<property name="empName" value="vignesh" />
+	<property name="empLocation" value="bangalore" />
+	</bean>
+</beans>
+
+
+
+
+
